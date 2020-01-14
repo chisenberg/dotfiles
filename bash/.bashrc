@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export GOPATH=$HOME/go
+
 function _update_ps1() {
     PS1="$($GOPATH/bin/powerline-go -error 0 -cwd-max-depth 1 -modules cwd,perms,git,ssh $?)"
 }

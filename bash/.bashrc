@@ -32,6 +32,7 @@ alias bashrc='vim ~/.bashrc && source'
 alias projects='cd /chdata/code/projects && clear && ls'
 alias source='source ~/.bashrc && clear'
 alias down='cd /chdata/down/ZOVER && clear && ls'
+alias vim="vim -c 'startinsert'"
 #alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 
 export PAGER="most"

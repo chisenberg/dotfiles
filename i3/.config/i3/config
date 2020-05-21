@@ -222,4 +222,4 @@ gaps inner 8
 #gaps bottom 5
 #gaps top 5
 
-border_radius 8
+#border_radius 8

@@ -17,6 +17,8 @@ font pango:monospace 8
 
 for_window [class="^.*"] border pixel 0
 
+default_border pixel 0
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -176,9 +178,9 @@ bar {
 }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3000 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3000 #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -206,8 +208,8 @@ for_window [title=".*Terminator.Preferences.*"] floating enable
 #Lock
 #bindsym $mod+l exec i3lock-fancy -p -- scrot -z && xset dpms force off
 bindsym $mod+l exec i3lock-fancy && xset dpms force off
-bindsym Print exec scrot -e 'mv $f ~/Pictures/'
-bindsym Shift+Print exec scrot -s -e 'mv $f ~/Pictures/'
+bindsym Print exec scrot -se 'mv $f ~/Pictures/'
+#bindsym Shift+Print exec scrot -se 'mv $f ~/Pictures/'
 
 #exec /chdata/code/scripts/fixes.sh
 exec nitrogen --restore
@@ -216,7 +218,6 @@ exec --no-startup-id nm-applet
 exec picom -r 12
 exec xss-lock -- i3lock-fancy -p -- scrot -z
 #exec --no-startup-id polybar mybar -r
-
 
 gaps outer 2
 gaps inner 8

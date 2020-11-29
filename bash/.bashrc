@@ -19,7 +19,8 @@ fi
 
 alias ls='ls --color=auto'
 alias ll='ls -lah'
-alias top='gotop -b'
+alias top='gotop'
+#alias subdl='subdl --download=most-downloaded --lang=pob'
 alias subdl='subdl --interactive --lang=pob'
 alias fixes='sudo /chdata/code/scripts/fixes.sh'
 alias config='vim ~/.config/i3/config && clear'

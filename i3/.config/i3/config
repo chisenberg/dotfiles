@@ -15,9 +15,9 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
-default_border pixel 0
+#default_border pixel 1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -207,20 +207,23 @@ for_window [title=".*Terminator.Preferences.*"] floating enable
 
 #Lock
 #bindsym $mod+l exec i3lock-fancy -p -- scrot -z && xset dpms force off
-bindsym $mod+l exec i3lock-fancy && xset dpms force off
-bindsym Print exec scrot -se 'mv $f ~/Pictures/'
+bindsym $mod+l exec "i3lock-fancy && xset dpms force off"
+bindsym --release Print exec "scrot -e 'mv $f ~/Pictures/'"
+bindsym --release Shift+Print exec "scrot -se 'mv $f ~/Pictures/'"
 #bindsym Shift+Print exec scrot -se 'mv $f ~/Pictures/'
 
 #exec /chdata/code/scripts/fixes.sh
 exec nitrogen --restore
 exec redshift-gtk -l -25.480877:-49.304424
 exec --no-startup-id nm-applet
-exec picom -r 12
+#exec picom -r 12
 exec xss-lock -- i3lock-fancy -p -- scrot -z
 #exec --no-startup-id polybar mybar -r
+#exec ~/.screenlayout/external-only.sh
+exec setxkbmap br
 
-gaps outer 2
-gaps inner 8
+#gaps outer 2
+#gaps inner 8
 #gaps bottom 5
 #gaps top 5
 

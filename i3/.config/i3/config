@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 
 #default_border pixel 1
 
@@ -199,6 +199,7 @@ bindsym XF86Calculator exec gnome-calculator
 for_window [class="Gnome-calculator"] floating enable move right 50px,move down 50px
 for_window [class="XCalc"] floating enable move right 250px,move down 250px
 for_window [class="Pcmanfm"] floating enable
+for_window [class="Insync"] floating enable
 for_window [class="Arandr"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="Transmission-gtk"] floating enable
@@ -222,9 +223,9 @@ exec xss-lock -- i3lock-fancy -p -- scrot -z
 #exec ~/.screenlayout/external-only.sh
 exec setxkbmap br
 
-#gaps outer 2
-#gaps inner 8
-#gaps bottom 5
-#gaps top 5
+gaps outer 2
+gaps inner 8
+gaps bottom 3
+gaps top 3
 
-#border_radius 8
+border_radius 8

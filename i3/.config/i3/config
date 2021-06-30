@@ -208,7 +208,8 @@ for_window [title=".*Terminator.Preferences.*"] floating enable
 
 #Lock
 #bindsym $mod+l exec i3lock-fancy -p -- scrot -z && xset dpms force off
-bindsym $mod+l exec "i3lock-fancy && xset dpms force off"
+#bindsym $mod+l exec "i3lock-fancy && xset dpms force off"
+bindsym $mod+l exec "dm-tool lock"
 bindsym --release Print exec "scrot -e 'mv $f ~/Pictures/'"
 bindsym --release Shift+Print exec "scrot -se 'mv $f ~/Pictures/'"
 #bindsym Shift+Print exec scrot -se 'mv $f ~/Pictures/'
@@ -222,6 +223,7 @@ exec xss-lock -- i3lock-fancy -p -- scrot -z
 #exec --no-startup-id polybar mybar -r
 #exec ~/.screenlayout/external-only.sh
 exec setxkbmap br
+exec insync start
 
 gaps outer 2
 gaps inner 8
